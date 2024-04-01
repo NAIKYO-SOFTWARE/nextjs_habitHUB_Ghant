@@ -1,0 +1,16 @@
+import sum2Number from "../sumNumber";
+
+describe("sum", () => {
+  it("correctly adds two numbers", () => {
+    expect(sum2Number(1, 2)).toBe(3);
+    expect(sum2Number(-1, -2)).toBe(-3);
+    expect(sum2Number(-1, 1)).toBe(0);
+    expect(sum2Number(30, 20)).toBe(50);
+  });
+
+  it("works with zero", () => {
+    expect(sum2Number(0, 0)).toBe(0);
+    expect(sum2Number(0, 5)).toBe(5);
+    expect(sum2Number(-5, 0)).toBe(-5);
+  });
+});
