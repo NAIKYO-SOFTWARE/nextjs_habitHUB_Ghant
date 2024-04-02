@@ -1,0 +1,15 @@
+.profile_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn_logout {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(241, 64, 48);
+  color: black;
+  font-weight: bold;
+  border: 3px solid black;
+}

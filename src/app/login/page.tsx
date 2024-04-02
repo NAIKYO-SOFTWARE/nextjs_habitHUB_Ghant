@@ -1,22 +1,45 @@
-// import Button from "../Components/Button/Button";
-import Link from "next/link";
-import "../style/beforeLogin.css";
+"use client";
 
-function BeforeLoginView() {
+import { useRouter } from "next/navigation";
+import Button from "../Components/Button/Button";
+import styles from "../style/views/login.module.css";
+import { useState } from "react";
+
+function Login() {
+  const router = useRouter();
+
+  const [user, setUser] = useState("");
   return (
-    <div>
-      <h1 className="h1-before-login">Do your </h1>
-      <h1 className="h1-before-login">tasks </h1>
-      <h1 className="h1-before-login">quickly </h1>
-      <h1 className="h1-before-login">and easy</h1>
-      <p>Your tasks, your rules, our support</p>
-      <Link href="/profile">
-        <button>Login</button>
-      </Link>
-      <br />
-      <Link href={"/"}>Create an account</Link>
+    <div className={styles.login_container}>
+      <h3 className={styles.title}>Log in to HabitHUB</h3>
+      <p className={styles.text}>
+        Welcome back! Sign in using your social account or email to continue us
+      </p>
+      <input
+        type="text"
+        id="fieldName"
+        className={styles.input}
+        placeholder="Username..."
+        onChange={(e) => {
+          setUser(e.target.value);
+        }}
+      />
+      <br></br>
+      <input
+        type="password"
+        id="fieldPass"
+        className={styles.input}
+        placeholder="Password..."
+      />
+      <br></br>
+      <Button
+        text={"Login"}
+        onClick={() => {
+          router.push("/home");
+        }}
+      ></Button>
     </div>
   );
 }
 
-export default BeforeLoginView;
+export default Login;

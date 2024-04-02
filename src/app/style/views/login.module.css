@@ -1,0 +1,32 @@
+.login_container {
+  display: flex;
+  flex-direction: column; /* Hiển thị các phần tử con theo chiều dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+}
+
+.title {
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(211, 94, 213);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.text {
+  text-align: center;
+  margin-top: 20px;
+  color: black;
+  width: 350px;
+  margin-bottom: 20px;
+}
+
+.input {
+  height: 45px;
+  width: 400px;
+  background-color: aliceblue;
+  color: black;
+}
+
+.input::placeholder {
+  padding-left: 5px;
+}
