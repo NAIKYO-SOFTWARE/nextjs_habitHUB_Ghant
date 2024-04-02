@@ -4,10 +4,12 @@ import { useRouter } from "next/navigation";
 import Button from "../Components/Button/Button";
 import styles from "../style/views/login.module.css";
 import { useState } from "react";
+import { addUser } from "@/lib/features/users/userSlice";
+import { useAppDispatch } from "@/lib/hooks";
 
 function Login() {
   const router = useRouter();
-
+  const dispatch = useAppDispatch();
   const [user, setUser] = useState("");
   return (
     <div className={styles.login_container}>
@@ -35,6 +37,7 @@ function Login() {
       <Button
         text={"Login"}
         onClick={() => {
+          dispatch(addUser(user));
           router.push("/home");
         }}
       ></Button>

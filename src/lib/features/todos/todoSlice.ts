@@ -2,7 +2,8 @@ import { RootState } from "@/lib/store";
 import { createSlice, current } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
-const storedTodoList = localStorage.getItem("todoList");
+const storedTodoList =
+  typeof window !== "undefined" ? window.localStorage.getItem("todoList") : [];
 
 const initialState = {
   todoList:
