@@ -3,9 +3,14 @@
 import LayoutFooter from "../Layout/index";
 import TodoSuggest from "../Components/Todo/TodoSuggest";
 import "../style/views/suggest.css";
+import { addTodo } from "../../lib/features/todos/todoSlice";
+import { useAppDispatch } from "@/lib/hooks";
 
 function Suggest() {
+  const dispatch = useAppDispatch();
+
   let handleAddTodo = (todo: TodoSuggest) => {
+    dispatch(addTodo({ todo }));
     alert("Add to to-do list successfully!");
   };
 

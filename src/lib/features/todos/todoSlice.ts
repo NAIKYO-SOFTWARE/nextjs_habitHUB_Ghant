@@ -16,7 +16,7 @@ export const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       const id = uuidv4();
-      state.todoList.push({ ...action.payload, id });
+      state.todoList.push({ id, ...action.payload.todo });
       localStorage.setItem("todoList", JSON.stringify(state.todoList));
     },
     removeTodo: (state, action) => {

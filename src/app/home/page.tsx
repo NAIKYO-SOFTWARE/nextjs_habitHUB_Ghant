@@ -1,22 +1,27 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import LayoutFooter from "../Layout/index";
 import Header from "../Components/Header/Header";
+import LayoutFooter from "../Layout/index";
 import "../style/views/home.css";
+const Todo = dynamic(() => import("../Components/Todo/Todo"), {
+  ssr: false,
+});
 
 function Home() {
   let router = useRouter();
-  const handleClickAddChecklist = () => {
-    router.push("/suggest");
-  };
-
   return (
     <LayoutFooter>
       <Header></Header>
       <div className="card">
-        <div className="todo-list"></div>
-        <button className="btn-add-checklist" onClick={handleClickAddChecklist}>
+        <div className="todo-list">
+          <Todo />
+        </div>
+        <button
+          className="btn-add-checklist"
+          onClick={() => router.push("/suggest")}
+        >
           +
         </button>
       </div>
