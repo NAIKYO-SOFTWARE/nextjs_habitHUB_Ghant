@@ -2,13 +2,12 @@
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import "../../style/components/footer.css";
 
 function Footer() {
   const router = useRouter();
 
   const handleClickCalendar = () => {
-    router.push("/home");
+    router.push("/calendar");
   };
   const handleClickChecklist = () => {
     router.push("/home");
@@ -17,11 +16,11 @@ function Footer() {
     router.push("/profile");
   };
   return (
-    <div className="footer-container">
+    <div className="fixed w-full bottom-[0] left-2/4 -translate-x-1/2 h-[60px] flex items-center justify-around">
       <div>
         <Image
           src="/icon/calendar.png"
-          className="icon-footer"
+          className="w-[32px] h-[32px] hover:cursor-pointer"
           onClick={handleClickCalendar}
           alt="Calendar"
           width={32}
@@ -31,7 +30,7 @@ function Footer() {
       <div>
         <Image
           src="/icon/checklist.png"
-          className="icon-footer"
+          className="w-[32px] h-[32px] hover:cursor-pointer"
           onClick={handleClickChecklist}
           alt="Checklist"
           width={32}
@@ -41,7 +40,7 @@ function Footer() {
       <div>
         <Image
           src="/icon/user.png"
-          className="icon-footer"
+          className="w-[32px] h-[32px] hover:cursor-pointer"
           onClick={handleClickUser}
           alt="Profile"
           width={32}

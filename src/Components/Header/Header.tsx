@@ -1,5 +1,4 @@
 import Calendar from "../Calendar/Calendar";
-import "../../style/components/header.css";
 
 function Header() {
   let date = new Date();
@@ -14,12 +13,12 @@ function Header() {
   }
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let cal = [];
-  while (startOfWeek <= endOfWeek) {
+  while (startOfWeek < endOfWeek) {
     cal.push(new Date(startOfWeek));
     startOfWeek.setDate(startOfWeek.getDate() + 1);
   }
   return (
-    <div className="days-of-week">
+    <div className="flex mb-auto absolute justify-around left-1/2 transform -translate-x-1/2 w-3/5">
       {cal.map((date) => (
         <Calendar
           date={date.getDate()}

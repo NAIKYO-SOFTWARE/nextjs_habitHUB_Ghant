@@ -1,4 +1,4 @@
-import Footer from "../Components/Footer/Footer";
+import Footer from "../../Components/Footer/Footer";
 import React, { ReactNode } from "react";
 
 interface LayoutFooterProps {
